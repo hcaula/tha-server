@@ -1,12 +1,15 @@
 import express from 'express'
+import * as http from 'http'
 
-const app = express()
-const port = 3000
+import { configureRoutes } from './common/routes'
 
-app.get('/', (req, res) => {
-    res.send('The sedulous hyena ate the antelope!')
-})
+const app: express.Application = express()
+const server: http.Server = http.createServer(app)
+const port = process.env.PORT
 
-app.listen(port, () => {
-    return console.log(`server is listening on ${port}`)
+app.use(express.json())
+configureRoutes(app)
+
+server.listen(port, () => {
+  console.log(`Server running at http://localhost:${port}`)
 })
