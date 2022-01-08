@@ -1,0 +1,21 @@
+{
+  "name": "tha-server",
+  "version": "1.0.0",
+  "description": "The server for the THA test application",
+  "author": "Henrique Caúla",
+  "main": "dist/app.js",
+  "license": "MIT",
+  "scripts": {
+    "start": "tsc && node dist/app.js",
+    "test": "echo \"Error: no test specified\" && exit 1"
+  },
+  "dependencies": {
+    "express": "^4.17.2"
+  },
+  "devDependencies": {
+    "@types/express": "^4.17.13",
+    "prettier": "^2.5.1",
+    "tslint": "^6.1.3",
+    "typescript": "^4.5.4"
+  }
+}
