@@ -1,6 +1,6 @@
 import { NextFunction, Request, Response } from 'express'
 import { validationResult } from 'express-validator'
-import BadRequestException from '../exceptions/bad.request.exception'
+import BadRequestException from '../exceptions/badRequest.exception'
 import HttpException from '../exceptions/http.exception'
 
 function validationsMiddleware(

@@ -4,7 +4,8 @@ import { checkSchema } from 'express-validator'
 import { CommonRoutesConfig } from '../common/routes.config'
 import validationsMiddleware from '../middlewares/validations.middleware'
 
-import getHealthStatusSchema from './health.status.schema'
+import getHealthStatusSchema from './health/schema'
+import FinancialHealthController from './health/controller'
 
 class FinancialRoutes extends CommonRoutesConfig {
   constructor() {
@@ -17,9 +18,7 @@ class FinancialRoutes extends CommonRoutesConfig {
       .get(
         checkSchema(getHealthStatusSchema),
         validationsMiddleware,
-        (req: express.Request, res: express.Response) => {
-          res.send('Success!')
-        }
+        FinancialHealthController.getHealthStatus
       )
   }
 }

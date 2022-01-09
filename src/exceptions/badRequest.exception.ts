@@ -1,5 +1,5 @@
 import HttpException from './http.exception'
-import { httpStatusCodes } from '../common/http.status.codes'
+import { httpStatusCodes } from '../common/httpStatus'
 
 class BadRequestException extends HttpException {
   constructor(message: string, value: any) {

@@ -2,7 +2,7 @@ import { NextFunction, Request, Response } from 'express'
 import _ from 'lodash'
 
 import HttpException from '../exceptions/http.exception'
-import { httpStatusCodes, httpErrorMessages } from '../common/http.status.codes'
+import { httpStatusCodes, httpErrorMessages } from '../common/httpStatus'
 
 function errorMiddleware(
   error: HttpException,

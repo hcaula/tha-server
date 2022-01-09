@@ -2,7 +2,7 @@ import express from 'express'
 import * as http from 'http'
 
 import { configureRoutes } from './common/routes'
-import camelizeQueryParamsMiddleware from './middlewares/camelize.query.params.middleware'
+import camelizeQueryParamsMiddleware from './middlewares/camelizeQueryParams.middleware'
 import errorMiddleware from './middlewares/error.middleware'
 
 const app: express.Application = express()
