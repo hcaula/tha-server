@@ -10,14 +10,9 @@ function errorMiddleware(
   res: Response,
   next: NextFunction
 ) {
-  const { INTERNAL_SERVER_ERROR } = httpStatusCodes
-
-  const status = error.status || INTERNAL_SERVER_ERROR
+  const status = error.status || httpStatusCodes.INTERNAL_SERVER_ERROR
+  const message = error.message || httpErrorMessages.INTERNAL_SERVER_ERROR
   const value = error.value
-  const message =
-    status === INTERNAL_SERVER_ERROR
-      ? httpErrorMessages.INTERNAL_SERVER_ERROR
-      : error.message
 
   const body = { status, message, value }
   res.status(status).send(_.omitBy(body, _.isNil))
