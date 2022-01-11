@@ -5,6 +5,7 @@ import cors from 'cors'
 import { configureRoutes } from './common/routes'
 import camelizeQueryParamsMiddleware from './middlewares/camelizeQueryParams.middleware'
 import errorMiddleware from './middlewares/error.middleware'
+import artificialLoading from './middlewares/artificialLoading.middleware'
 
 const app: express.Application = express()
 const server: http.Server = http.createServer(app)
@@ -12,6 +13,7 @@ const port = process.env.PORT
 
 app.use(cors())
 app.use(express.json())
+app.use(artificialLoading)
 app.use(camelizeQueryParamsMiddleware)
 configureRoutes(app)
 app.use(errorMiddleware)
