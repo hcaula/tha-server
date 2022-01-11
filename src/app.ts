@@ -21,3 +21,9 @@ app.use(errorMiddleware)
 server.listen(port, () => {
   console.log(`Server running at http://localhost:${port}`)
 })
+
+/* istanbul ignore next */
+// @ts-ignore
+if (global.__coverage__) {
+  require('@cypress/code-coverage/middleware/express')(app)
+}

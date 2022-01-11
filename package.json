@@ -9,7 +9,8 @@
     "start": "nodemon -r dotenv/config src/app.ts",
     "test": "echo \"Error: no test specified\" && exit 1",
     "prepare": "husky install",
-    "cy:open": "cypress open"
+    "cy:open": "cypress open",
+    "start:instrumented": "nyc --silent nodemon -r dotenv/config src/app.ts"
   },
   "lint-staged": {
     "**/*": "prettier --write --ignore-unknown"
@@ -28,12 +29,14 @@
     "lodash": "^4.17.21"
   },
   "devDependencies": {
+    "@cypress/code-coverage": "^3.9.12",
     "@types/express": "^4.17.13",
     "cypress": "^9.2.1",
     "dotenv": "^10.0.0",
     "husky": "^7.0.4",
     "lint-staged": "^12.1.7",
     "nodemon": "^2.0.15",
+    "nyc": "^15.1.0",
     "prettier": "^2.5.1",
     "ts-node": "^10.4.0",
     "tslint": "^6.1.3",

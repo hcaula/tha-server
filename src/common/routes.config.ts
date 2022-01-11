@@ -9,13 +9,5 @@ export abstract class CommonRoutesConfig {
     this.baseRoute = options.baseRoute
   }
 
-  getName() {
-    return this.name
-  }
-
-  getBaseRoute() {
-    return this.baseRoute
-  }
-
   abstract configureRoutes(app: express.Application): void
 }

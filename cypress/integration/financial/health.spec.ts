@@ -55,7 +55,7 @@ describe(ROUTE, () => {
     context('when annualIncome is not passed', () => {
       const monthlyCosts = 30
 
-      it('returns an error', () => {
+      it('returns the proper bad request error', () => {
         cy.request({
           url: ROUTE,
           qs: { monthlyCosts },
@@ -71,7 +71,7 @@ describe(ROUTE, () => {
     context('when monthlyCosts is not passed', () => {
       const annualIncome = 1000
 
-      it('returns an error', () => {
+      it('returns the proper bad request error', () => {
         cy.request({
           url: ROUTE,
           qs: { annualIncome },
@@ -88,7 +88,7 @@ describe(ROUTE, () => {
       const annualIncome = -1
       const monthlyCosts = 30
 
-      it('returns an error', () => {
+      it('returns the proper bad request error', () => {
         cy.request({
           url: ROUTE,
           qs: { annualIncome, monthlyCosts },
@@ -105,7 +105,7 @@ describe(ROUTE, () => {
       const annualIncome = 1000
       const monthlyCosts = -1
 
-      it('returns an error', () => {
+      it('returns the proper bad request error', () => {
         cy.request({
           url: ROUTE,
           qs: { annualIncome, monthlyCosts },
