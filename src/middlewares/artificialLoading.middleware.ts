@@ -1,6 +1,6 @@
 import { NextFunction, Request, Response } from 'express'
 
-const TIMEOUT_INTERVAL = 1000
+const TIMEOUT_INTERVAL = 1
 
 function artificialLoading(req: Request, res: Response, next: NextFunction) {
   if (process.env.ENVIRONMENT !== 'development') next()
